@@ -54,8 +54,8 @@ TBD
 
 **_Day 1: The Honey Counter_**
 
-[ ] Display a simple number: "You have X honey".
-[ ] Add a function to increment honey every second.
+[X] Display a simple number: "You have X honey".
+[X] Add a function to increment honey every second.
 
 **_Day 2: Buttons & Basic Actions_**
 
