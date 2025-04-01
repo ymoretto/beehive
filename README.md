@@ -50,7 +50,7 @@ TBD
 
 [x] Create a GitHub repository (TheBeehive).
 [x] Set up a README.md.
-[ ] Prepare basic roadmap.
+[X] Prepare basic roadmap.
 
 **_Day 1: The Honey Counter_**
 
