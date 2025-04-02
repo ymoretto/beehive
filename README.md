@@ -59,13 +59,15 @@ TBD
 
 **_Day 2: Buttons & Basic Actions_**
 
-[ ] Add a "Collect Honey" button (manual honey collection).
-[ ] Clicking increases honey count.
+[X] Add a "Collect Honey" button (manual honey collection) when user gets 10 honeys.
+[X] Clicking increases honey count.
 
 **_Day 3: Store & Upgrades System_**
 
-[ ] Add a shop section where players can buy auto-collectors (like Worker Bees).
+[ ] Add "buy Worker Bee" btn when user reaches 50 honey
+[ ] Worker Bee get one more honey per minute (is it too little?).
 [ ] Display costs and effects of upgrades.
+[ ] "You have X bee humming around"
 
 **_Day 4: UI Enhancements_**
 
