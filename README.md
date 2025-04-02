@@ -1,5 +1,7 @@
 # The Beehive
 
+[Play Here!](https://ymoretto.github.io/beehive/)
+
 ## Table of Contents
 
 - [Description](#description)
