@@ -66,10 +66,10 @@ TBD
 
 **_Day 3: Store & Upgrades System_**
 
-[ ] Add "buy Worker Bee" btn when user reaches 50 honey
+[X] Add "buy Worker Bee" btn when user reaches 10 honey (previously 50, but that was too much)
 [ ] Worker Bee get one more honey per minute (is it too little?).
 [ ] Display costs and effects of upgrades.
-[ ] "You have X bee humming around"
+[X] "Your X bee buzzing around"
 
 **_Day 4: UI Enhancements_**
 

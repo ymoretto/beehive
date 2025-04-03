@@ -26,11 +26,11 @@ const hiveProxy = new Proxy(hive, {
 const updateHoneyUI = () => {
   if (hiveProxy.nHoney === 1) {
     document.getElementById(
-      "honey"
+      "honey-count"
     ).innerHTML = `You have ${hiveProxy.nHoney} full honey cell`;
   } else {
     document.getElementById(
-      "honey"
+      "honey-count"
     ).innerHTML = `You have ${hiveProxy.nHoney} full honey cells`;
   }
 
@@ -41,11 +41,16 @@ const updateHoneyUI = () => {
 };
 
 const updateWorkerUI = () => {
-  console.log("create element now");
+  if (hiveProxy.nWorker > 0) {
+    addWorkerBeeDiv();
+  }
 };
 
 const addWorkerBeeBtn = () => {
-  let wrapper = document.getElementById("beehive");
+  if (document.getElementById("workerBeeBtn")) return;
+
+  let wrapper = document.getElementById("honey");
+  console.log(wrapper);
   let workerBeeBtn = document.createElement("button");
   workerBeeBtn.textContent = "Attract Worker Bee";
   wrapper.appendChild(workerBeeBtn);
@@ -53,13 +58,19 @@ const addWorkerBeeBtn = () => {
   workerBeeBtn.onclick = increaseWorkerBee;
 };
 
+const addWorkerBeeDiv = () => {
+  let wrapper = document.getElementById("worker-bees");
+  let workerBeeMessage = document.createElement("p");
+  wrapper.appendChild(workerBeeMessage);
+  workerBeeMessage.textContent = `Your ${hiveProxy.nWorker} bee is buzzing around!`;
+};
+
 const secIncrease = () => {
   hiveProxy.nHoney++; // Increment honey count via Proxy
 };
 
 const increaseWorkerBee = () => {
-  console.log("Now you hvae one more Worker Bee!");
-  // increase worker bee total here
+  hiveProxy.nWorker++;
 };
 
 window.setInterval(secIncrease, 1000);
