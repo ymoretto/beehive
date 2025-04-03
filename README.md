@@ -77,6 +77,7 @@ TBD
 **_Day 5: Save & Load System_**
 
 [ ] Store honey and upgrades in localStorage so progress is saved.
+[ ] Add a increasing cost for buying more Worker Bees
 
 **_Day 6: Flower Garden_**
 

@@ -60,9 +60,13 @@ const addWorkerBeeBtn = () => {
 
 const addWorkerBeeDiv = () => {
   let wrapper = document.getElementById("worker-bees");
-  let workerBeeMessage = document.createElement("p");
-  wrapper.appendChild(workerBeeMessage);
-  workerBeeMessage.textContent = `Your ${hiveProxy.nWorker} bee is buzzing around!`;
+  // let workerBeeMessage = document.createElement("p");
+  // wrapper.appendChild(workerBeeMessage);
+  if (hiveProxy === 1) {
+    wrapper.innerHTML = `<p>Your ${hiveProxy.nWorker} worker bee is buzzing around</p>`;
+  } else {
+    wrapper.innerHTML = `<p>Your ${hiveProxy.nWorker} worker bees are buzzing around</p>`;
+  }
 };
 
 const secIncrease = () => {
