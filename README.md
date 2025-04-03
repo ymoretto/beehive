@@ -64,26 +64,24 @@ TBD
 [X] Add a "Collect Honey" button (manual honey collection) when user gets 10 honeys.
 [X] Clicking increases honey count.
 
-**_Day 3: Store & Upgrades System_**
+**_Day 3: Worker Bee System_**
 
 [X] Add "buy Worker Bee" btn when user reaches 10 honey (previously 50, but that was too much)
-[ ] Worker Bee get one more honey per minute (is it too little?).
-[ ] Display costs and effects of upgrades.
 [X] "Your X bee buzzing around"
 
-**_Day 4: UI Enhancements_**
+**_Day 4: Pollen Collector_**
 
-[ ] Improve honey display: add icons, better fonts, and basic CSS styling.
-[ ] Make numbers look animated when increasing.
+[ ] Worker Bee starts collecting polen.
+[ ] Number of Worker change time of polen collection.
 
 **_Day 5: Save & Load System_**
 
 [ ] Store honey and upgrades in localStorage so progress is saved.
 
-**_Day 6: More Upgrades & Auto Collection_**
+**_Day 6: Flower Garden_**
 
-[ ] Introduce another unit of honey collectors (maybe Beekeepers?).
-[ ] Auto-collection should now happen at different rates for different units.
+[ ] You can use honey to plant flowers.
+[ ] Flowers can impact in the amount or speed of honey being collected.
 
 **_Day 7: Daily Progress & Polishing_**
 
