@@ -71,8 +71,9 @@ TBD
 
 **_Day 4: Pollen Collector_**
 
-[ ] Worker Bee starts collecting polen.
-[ ] Number of Worker change time of polen collection.
+[X] Worker Bee starts collecting polen.
+[X] Number of Worker change time of polen collection.
+-> skipping this one for now, will implement that calculation later
 
 **_Day 5: Save & Load System_**
 
@@ -88,6 +89,7 @@ TBD
 
 [ ] Review progress so far and fix any bugs.
 [ ] Improve code structure (clean up script.js into smaller functions).
+[ ] Add connection between worker bees and qtd of collected pollen
 
 **_Day 8: Add a New Resource – Beeswax_**
 

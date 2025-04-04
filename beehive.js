@@ -1,6 +1,7 @@
 let hive = {
   nHoney: 0,
   nWorker: 0,
+  nPollen: 0,
 };
 
 // How JavaScript's Proxy Object Works
@@ -15,7 +16,7 @@ const hiveProxy = new Proxy(hive, {
     }
 
     if (prop === "nWorker") {
-      // Update nHoney UI
+      // Update nWorker UI
       updateWorkerUI();
     }
 
@@ -50,7 +51,6 @@ const addWorkerBeeBtn = () => {
   if (document.getElementById("workerBeeBtn")) return;
 
   let wrapper = document.getElementById("honey");
-  console.log(wrapper);
   let workerBeeBtn = document.createElement("button");
   workerBeeBtn.textContent = "Attract Worker Bee";
   wrapper.appendChild(workerBeeBtn);
@@ -59,13 +59,36 @@ const addWorkerBeeBtn = () => {
 };
 
 const addWorkerBeeDiv = () => {
-  let wrapper = document.getElementById("worker-bees");
-  // let workerBeeMessage = document.createElement("p");
-  // wrapper.appendChild(workerBeeMessage);
-  if (hiveProxy === 1) {
-    wrapper.innerHTML = `<p>Your ${hiveProxy.nWorker} worker bee is buzzing around</p>`;
+  // start worker bee counter
+  let workerCount = document.getElementById("worker-bee-count");
+
+  if (hiveProxy.nWorker === 1) {
+    workerCount.textContent = `Your ${hiveProxy.nWorker} worker bee is buzzing around`;
   } else {
-    wrapper.innerHTML = `<p>Your ${hiveProxy.nWorker} worker bees are buzzing around</p>`;
+    workerCount.textContent = `Your ${hiveProxy.nWorker} worker bees are buzzing around`;
+  }
+
+  // starter worker bee productivity message
+  let WorkerProductivity = document.getElementById("productivity-message");
+  WorkerProductivity.textContent = `Your worker bees are collecting 1 pollen per day`;
+
+  if (hiveProxy.nWorker === 1) {
+    startPollenInterval();
+    addPollenDiv();
+  }
+};
+
+const addPollenDiv = () => {
+  let pollenCount = document.getElementById("pollen-count");
+  pollenCount.textContent = `You have 0 pollen grain`;
+};
+
+const updatePollenUI = () => {
+  let pollenCount = document.getElementById("pollen-count");
+  if (hiveProxy.nPollen === 1) {
+    pollenCount.textContent = `You have ${hiveProxy.nPollen} pollen grain`;
+  } else {
+    pollenCount.textContent = `You have ${hiveProxy.nPollen} pollen grains`;
   }
 };
 
@@ -77,4 +100,26 @@ const increaseWorkerBee = () => {
   hiveProxy.nWorker++;
 };
 
+const increasePollenCount = () => {
+  hiveProxy.nPollen++;
+  updatePollenUI();
+};
+
+// Start the interval to increase honey every second
 window.setInterval(secIncrease, 1000);
+
+// Set interval to increase pollen
+let pollenTimer = null; // Store interval reference
+
+const startPollenInterval = () => {
+  if (!pollenTimer) {
+    // Prevent multiple intervals
+    pollenTimer = setInterval(() => {
+      if (hiveProxy.nWorker > 0) {
+        // Ensure a worker bee exists
+        console.log("Pollen interval running");
+        increasePollenCount();
+      }
+    }, 5000);
+  }
+};
