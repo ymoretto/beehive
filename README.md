@@ -78,7 +78,7 @@ TBD
 **_Day 5: Save & Load System_**
 
 [X] Store honey and upgrades in localStorage so progress is saved.
-[ ] Add a increasing cost for buying more Worker Bees
+[X] Add a increasing cost for buying more Worker Bees
 
 **_Day 6: Flower Garden_**
 
@@ -125,6 +125,7 @@ TBD
 
 [ ] Test all features and fix UI bugs.
 [ ] Optimize the save system.
+[ ] Add Reset Game Button
 
 **_Day 15: Expand the Beehive_**
 
@@ -212,7 +213,11 @@ Contributions are welcome! If you have ideas for new features or improvements, f
 
 ## Known Issues
 
-TBD
+- Bug: after buying a worker bee, if the nHoney is less than 10, when it reaches 10 again, it adds another Worker Bee Btn.
+Suggested Fix: added a total amount of honey collect forever, like they do in candy box 2.
+
+- Bug: user doesn't know how much worker bee costs.
+Suggested Fix: Dynamically add the cost in the button text.
 
 ## Future Plans
 

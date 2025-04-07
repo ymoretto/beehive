@@ -99,6 +99,13 @@ const secIncrease = () => {
 };
 
 const increaseWorkerBee = () => {
+  let cost = calculateWorkerBeeCost();
+  console.log("Cost to attract worker bee:", cost);
+  if (hiveProxy.nHoney < cost) {
+    alert("You don't have enough honey to attract a worker bee!");
+    return;
+  }
+  hiveProxy.nHoney -= cost;
   hiveProxy.nWorker++;
 };
 
@@ -154,3 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadButton.addEventListener("click", loadGame);
   }
 });
+
+const calculateWorkerBeeCost = () => {
+  return 10 * Math.pow(2, hiveProxy.nWorker);
+}
