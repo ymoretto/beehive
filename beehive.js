@@ -1,9 +1,10 @@
-'use strict';
+"use strict";
 
 let hive = {
   nHoney: 0,
   nWorker: 0,
   nPollen: 0,
+  nFlower: 0,
 };
 
 // How JavaScript's Proxy Object Works
@@ -20,6 +21,11 @@ const hiveProxy = new Proxy(hive, {
     if (prop === "nWorker") {
       // Update nWorker UI
       updateWorkerUI();
+    }
+
+    if (prop === "nFlower") {
+      // Update nWorker UI
+      updateFlowerUI();
     }
 
     return true;
@@ -47,6 +53,16 @@ const updateWorkerUI = () => {
   if (hiveProxy.nWorker > 0) {
     addWorkerBeeDiv();
   }
+
+  if (hiveProxy.nWorker === 5) {
+    addFlowerBtn();
+  }
+};
+
+const updateFlowerUI = () => {
+  if (hiveProxy.nFlower > 0) {
+    addFlowerGarden();
+  }
 };
 
 const addWorkerBeeBtn = () => {
@@ -55,6 +71,7 @@ const addWorkerBeeBtn = () => {
   let wrapper = document.getElementById("honey");
   let workerBeeBtn = document.createElement("button");
   workerBeeBtn.textContent = "Attract Worker Bee";
+  workerBeeBtn.id = "workerBeeBtn";
   wrapper.appendChild(workerBeeBtn);
 
   workerBeeBtn.onclick = increaseWorkerBee;
@@ -83,6 +100,22 @@ const addWorkerBeeDiv = () => {
 const addPollenDiv = () => {
   let pollenCount = document.getElementById("pollen-count");
   pollenCount.textContent = `You have 0 pollen grain`;
+};
+
+const addFlowerBtn = () => {
+  if (document.getElementById("flowerBtn")) return;
+
+  let wrapper = document.getElementById("flower-garden");
+  let flowerBtn = document.createElement("button");
+  flowerBtn.textContent = "Plant 1 Flower";
+  flowerBtn.id = "flowerBtn";
+  wrapper.appendChild(flowerBtn);
+  flowerBtn.onclick = increaseFlowerCount;
+};
+
+const addFlowerGarden = () => {
+  let flowerGarden = document.getElementById("flower-garden");
+  flowerGarden.textContent = `You have a flower garden!`;
 };
 
 const updatePollenUI = () => {
@@ -114,6 +147,10 @@ const increasePollenCount = () => {
   updatePollenUI();
 };
 
+const increaseFlowerCount = () => {
+  //
+};
+
 // Start the interval to increase honey every second
 window.setInterval(secIncrease, 1000);
 
@@ -134,10 +171,8 @@ const startPollenInterval = () => {
 };
 
 const saveGame = () => {
-  window.localStorage.setItem("hive", 
-    JSON.stringify(hiveProxy)
-  );
-}
+  window.localStorage.setItem("hive", JSON.stringify(hiveProxy));
+};
 
 const loadGame = () => {
   let loadedHive = window.localStorage.getItem("hive");
@@ -146,7 +181,7 @@ const loadGame = () => {
 
   Object.assign(hiveProxy, loadedHive);
   addWorkerBeeBtn();
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   const saveButton = document.getElementById("save");
@@ -164,4 +199,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const calculateWorkerBeeCost = () => {
   return 10 * Math.pow(2, hiveProxy.nWorker);
-}
+};

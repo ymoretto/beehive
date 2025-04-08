@@ -82,7 +82,7 @@ TBD
 
 **_Day 6: Flower Garden_**
 
-[ ] You can use honey to plant flowers.
+[X] You can use honey to plant flowers.
 [ ] Flowers can impact in the amount or speed of honey being collected.
 
 **_Day 7: Daily Progress & Polishing_**
@@ -214,10 +214,10 @@ Contributions are welcome! If you have ideas for new features or improvements, f
 ## Known Issues
 
 - Bug: after buying a worker bee, if the nHoney is less than 10, when it reaches 10 again, it adds another Worker Bee Btn.
-Suggested Fix: added a total amount of honey collect forever, like they do in candy box 2.
+  Suggested Fix: added a total amount of honey collect forever, like they do in candy box 2.
 
 - Bug: user doesn't know how much worker bee costs.
-Suggested Fix: Dynamically add the cost in the button text.
+  Suggested Fix: Dynamically add the cost in the button text.
 
 ## Future Plans
 
