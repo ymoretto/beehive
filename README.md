@@ -83,7 +83,7 @@ TBD
 **_Day 6: Flower Garden_**
 
 [X] You can use honey to plant flowers.
-[ ] Flowers can impact in the amount or speed of honey being collected.
+[X] Create the Flower Garden div.
 
 **_Day 7: Daily Progress & Polishing_**
 

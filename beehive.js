@@ -60,8 +60,15 @@ const updateWorkerUI = () => {
 };
 
 const updateFlowerUI = () => {
-  if (hiveProxy.nFlower > 0) {
+  if (hiveProxy.nFlower === 1) {
     addFlowerGarden();
+  }
+
+  let flowerCounter = document.getElementById("flower-count");
+  if (hiveProxy.nFlower === 1) {
+    flowerCounter.textContent = `You have ${hiveProxy.nFlower} flower.`
+  } else if (hiveProxy.nFlower > 0) {
+    flowerCounter.textContent = `You have ${hiveProxy.nFlower} flowers`
   }
 };
 
@@ -105,7 +112,7 @@ const addPollenDiv = () => {
 const addFlowerBtn = () => {
   if (document.getElementById("flowerBtn")) return;
 
-  let wrapper = document.getElementById("flower-garden");
+  let wrapper = document.getElementById("garden-btn");
   let flowerBtn = document.createElement("button");
   flowerBtn.textContent = "Plant 1 Flower";
   flowerBtn.id = "flowerBtn";
@@ -114,7 +121,7 @@ const addFlowerBtn = () => {
 };
 
 const addFlowerGarden = () => {
-  let flowerGarden = document.getElementById("flower-garden");
+  let flowerGarden = document.getElementById("flower-garden-title");
   flowerGarden.textContent = `You have a flower garden!`;
 };
 
@@ -148,7 +155,8 @@ const increasePollenCount = () => {
 };
 
 const increaseFlowerCount = () => {
-  //
+  hiveProxy.nFlower++;
+  updateFlowerUI();
 };
 
 // Start the interval to increase honey every second
