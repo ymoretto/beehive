@@ -87,9 +87,9 @@ TBD
 
 **_Day 7: Daily Progress & Polishing_**
 
-[ ] Review progress so far and fix any bugs.
-[ ] Improve code structure (clean up script.js into smaller functions).
-[ ] Add connection between worker bees and qtd of collected pollen
+[X] Review progress so far and fix any bugs.
+[X] Improve code structure (clean up script.js into smaller functions).
+[ ] Add connection between worker bees and qtd of collected pollen.
 
 **_Day 8: Add a New Resource – Beeswax_**
 
